@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'browse',
+    loadChildren: () => import('./features/browse/browse.module').then(m => m.BrowseModule)
+  },
+  {
     path: '',
     redirectTo: 'sn/',
     pathMatch: 'full'

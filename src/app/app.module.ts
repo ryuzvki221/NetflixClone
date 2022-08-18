@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
 import { HomeComponent } from './home/home.component';
+import { BrowseComponent } from './browse/browse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BrowseComponent
   ],
   imports: [
     BrowserModule,
