@@ -1,4 +1,75 @@
 <ion-content>
-works
-</ion-content>
+  <ion-grid>
+    <!--highlight-->
+    <ion-row class="header_row">
+      <ion-col size="12">
+        <!--the video -->
+        <video class="video-player" autoplay playsinline muted loop>
+          <source [src]="header_video_url" type="video/mp4" />
+        </video>
+        <div class="header_video">
+          <ion-row class="video_content_heading">
+            <ion-col size="12">
+              <h1 class="heading">
+                Daily Picks for {{ username | uppercase }}
+              </h1>
+            </ion-col>
+            <ion-col size-xs="12" size-md="6">
+              <ion-text color="light">
+                <h2 class="ion-margin-top ion-padding-top">
+                  {{ video_title | uppercase }}
+                </h2>
+                <p class="">{{ video_description }}</p>
+              </ion-text>
+              <ion-item lines="none" class="button_heading">
+                <ion-button color="light" slot="start"
+                  ><ion-icon name="play"></ion-icon>
+                  Play
+                </ion-button>
+                <ion-button color="medium">
+                  <ion-icon name="alert-circle-outline"></ion-icon>More
+                  info</ion-button
+                >
+              </ion-item>
+            </ion-col>
+            <ion-col size-xs="12" size-md="6">
+              <ion-item lines="none" class="">
+                <div class="button_volume_container">
+                  <ion-icon
+                    src="../../assets/icons/volume.svg"
+                    class="button_volume"
+                  ></ion-icon>
+                </div>
 
+                <span class="maturity-rating"
+                  ><span class="maturity-number">18+</span></span
+                >
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!--Tv Shows-->
+    <ion-row>
+      <ion-col> </ion-col>
+    </ion-row>
+    <!--Trending Now-->
+    <ion-row>
+      <ion-col> </ion-col>
+    </ion-row>
+    <!--New Releases-->
+    <ion-row>
+      <ion-col> </ion-col>
+    </ion-row>
+    <!--Epic Worlds-->
+    <ion-row>
+      <ion-col> </ion-col>
+    </ion-row>
+    <!--Anime-->
+    <ion-row>
+      <ion-col> </ion-col>
+    </ion-row>
+    <!--Movies-->
+  </ion-grid>
+</ion-content>
