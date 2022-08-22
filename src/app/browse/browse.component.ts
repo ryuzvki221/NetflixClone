@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BrowseService } from '../features/browse/services/browse.service';
 
 @Component({
   selector: 'app-browse',
@@ -10,15 +11,27 @@ export class BrowseComponent implements OnInit {
   username: string;
   video_title: string;
   video_description: string;
+// variables for the data
+  public tvShows: any;
+  public trendingNow: any;
+  public releases: any;
+  public anime: any;
+  public movies: any;
 
-
-  constructor() {
+  constructor(private readonly _api: BrowseService) {
     this.header_video_url =
       'https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4';
     this.username = 'RYUZVKI';
     this.video_title = 'narcos';
-    this.video_description = "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.";
+    this.video_description =
+      "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.";
   }
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    this.tvShows = await this._api.load('Tv Shows');
+    this.trendingNow = await this._api.load('Trending Now');
+    this.releases = await this._api.load('New Releases');
+    this.anime = await this._api.load('Anime');
+    this.movies = await this._api.load('Movies');
+  }
 }
