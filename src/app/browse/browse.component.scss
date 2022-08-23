@@ -1,4 +1,8 @@
 :host {
+  display: block;
+  background: var(--ion-color-secondary);
+
+  // highlight
   .video-player {
     position: fixed;
     right: 0;
@@ -57,5 +61,19 @@
         }
       }
     }
+  }
+
+  // animation image
+
+  .flexBox{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: visible;
+    margin-top: -1rem;
+    .flexItem{
+      cursor: pointer;
+      min-width: 200px;
+    }
+
   }
 }

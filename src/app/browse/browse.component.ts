@@ -12,11 +12,11 @@ export class BrowseComponent implements OnInit {
   video_title: string;
   video_description: string;
 // variables for the data
-  public tvShows: any;
-  public trendingNow: any;
-  public releases: any;
-  public anime: any;
-  public movies: any;
+  public tvShows!: any[];
+  public trendingNow!: any[];
+  public releases!: any[];
+  public anime!: any[];
+  public movies!: any[];
 
   constructor(private readonly _api: BrowseService) {
     this.header_video_url =
@@ -25,9 +25,10 @@ export class BrowseComponent implements OnInit {
     this.video_title = 'narcos';
     this.video_description =
       "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.";
+
   }
 
-  async ngOnInit() {
+   async ngOnInit() {
     this.tvShows = await this._api.load('Tv Shows');
     this.trendingNow = await this._api.load('Trending Now');
     this.releases = await this._api.load('New Releases');
