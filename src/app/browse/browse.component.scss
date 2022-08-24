@@ -3,19 +3,19 @@
   background: var(--ion-color-secondary);
 
   // highlight
-  .video-player {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+  .highlight{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+
   .heading {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 0;
     color: var(--ion-color-light);
   }
+
   .col_container_volume {
     position: relative;
 
@@ -24,6 +24,7 @@
       bottom: 46%;
       justify-content: flex-end;
       position: absolute;
+      left: auto;
       right: 0;
 
       .button_volume_container {
@@ -65,15 +66,14 @@
 
   // animation image
 
-  .flexBox{
+  .flexBox {
     display: flex;
     overflow-x: scroll;
     overflow-y: visible;
     margin-top: -1rem;
-    .flexItem{
+    .flexItem {
       cursor: pointer;
       min-width: 200px;
     }
-
   }
 }

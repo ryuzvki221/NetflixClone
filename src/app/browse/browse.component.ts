@@ -7,11 +7,12 @@ import { BrowseService } from '../features/browse/services/browse.service';
   styleUrls: ['./browse.component.scss'],
 })
 export class BrowseComponent implements OnInit {
+  background_bg: string;
   header_video_url: string;
   username: string;
   video_title: string;
   video_description: string;
-// variables for the data
+  // variables for the data
   public tvShows!: any[];
   public trendingNow!: any[];
   public releases!: any[];
@@ -25,10 +26,11 @@ export class BrowseComponent implements OnInit {
     this.video_title = 'narcos';
     this.video_description =
       "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.";
-
+    this.background_bg =
+      'https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4';
   }
 
-   async ngOnInit() {
+  async ngOnInit() {
     this.tvShows = await this._api.load('Tv Shows');
     this.trendingNow = await this._api.load('Trending Now');
     this.releases = await this._api.load('New Releases');

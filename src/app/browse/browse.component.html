@@ -1,13 +1,46 @@
 <ion-content>
   <ion-grid>
     <!--highlight-->
-    <ion-row>
-      <ion-col></ion-col>
+    <ion-row
+      class="highlight ion-no-padding ion-no-margin"
+      [style.background-image]="'url(' + background_bg + ')'"
+    >
+      <ion-col size="12"  class="ion-padding">
+        <!--the video -->
+        <ion-text color="light" class="heading">
+          <h1>Daily Picks for {{ username | uppercase }}</h1>
+        </ion-text>
+      </ion-col>
+      <ion-col size-xs="12" size-md="4" class="ion-padding">
+        <ion-text color="light">
+          <h2>{{ video_title | uppercase }}</h2>
+          <p class="text-large">{{ video_description }}</p>
+        </ion-text>
+        <ion-button color="light">
+          <ion-icon size="small" name="play"></ion-icon>
+          Play
+        </ion-button>
+        <ion-button color="medium">
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          More Info
+        </ion-button>
+      </ion-col>
+      <ion-col class="col_container_volume">
+        <ion-item class="volume_maturity_container">
+          <div class="button_volume_container">
+            <ion-icon src="../../assets/icons/volume.svg" class="button_volume"></ion-icon>
+          </div>
+
+          <ion-label color="light" class="maturity-rating">
+            <span class="maturity-number">18+</span>
+          </ion-label>
+        </ion-item>
+      </ion-col>
     </ion-row>
     <!--Tv Shows-->
     <ion-row *ngIf="tvShows">
       <ion-col size="12">
-        <ion-text>
+        <ion-text color="light">
           <h2 class="ion-padding-top">TV Shows</h2>
         </ion-text>
       </ion-col>
@@ -23,7 +56,7 @@
     <!--Trending Now-->
     <ion-row class="" *ngIf="trendingNow">
       <ion-col size="12" class="">
-        <ion-text>
+        <ion-text color="light">
           <h2 class="ion-padding-top">Trending Now</h2>
         </ion-text>
       </ion-col>
@@ -38,7 +71,7 @@
     <!--New Releases-->
     <ion-row class="new-release-row" *ngIf="releases">
       <ion-col size="12" class="">
-        <ion-text>
+        <ion-text color="light">
           <h2 class="ion-padding-top">New Releases</h2>
         </ion-text>
       </ion-col>
@@ -53,7 +86,7 @@
     <!--Anime-->
     <ion-row class="anime-row" *ngIf="anime">
       <ion-col size="12" class="">
-        <ion-text>
+        <ion-text color="light">
           <h2 class="ion-padding-top">Anime</h2>
         </ion-text>
       </ion-col>
@@ -68,7 +101,7 @@
     <!--Movies-->
     <ion-row class="movies-row" *ngIf="movies">
       <ion-col size="12" class="">
-        <ion-text>
+        <ion-text color="light">
           <h2 class="ion-padding-top">Movies</h2>
         </ion-text>
       </ion-col>
