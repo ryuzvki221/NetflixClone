@@ -1,42 +1,48 @@
 <ion-content>
-  <ion-grid>
-    <!--highlight-->
-    <ion-row
-      class="highlight ion-no-padding ion-no-margin"
-      [style.background-image]="'url(' + background_bg + ')'"
-    >
-      <ion-col size="12"  class="ion-padding">
-        <!--the video -->
-        <ion-text color="light" class="heading">
-          <h1>Daily Picks for {{ username | uppercase }}</h1>
-        </ion-text>
+  <!--highlight-->
+  <ion-grid
+    *ngIf="background_bg"
+    class="highlight ion-no-padding ion-no-margin"
+    [style.background-image]="'url(' + background_bg + ')'"
+  >
+    <ion-row class="content">
+      <!-- Daily picks -->
+      <ion-col size="12">
+        <h1 class="daily-picks-for-username">
+          Daily Picks for {{ username | uppercase }}
+        </h1>
       </ion-col>
-      <ion-col size-xs="12" size-md="4" class="ion-padding">
+      <!--Info meta layer-->
+      <ion-col size-xs="12" size-md="4" class="info meta-layer">
         <ion-text color="light">
-          <h2>{{ video_title | uppercase }}</h2>
-          <p class="text-large">{{ video_description }}</p>
+          <h2 class="title-info">{{ title | uppercase }}</h2>
+          <p class="synopsis">{{ description }}</p>
         </ion-text>
         <ion-button color="light">
           <ion-icon size="small" name="play"></ion-icon>
           Play
         </ion-button>
-        <ion-button color="medium">
-          <ion-icon name="alert-circle-outline"></ion-icon>
-          More Info
+        <ion-button color="rgba(109, 109, 110, 0.7)">
+          <ion-icon name="alert-circle-outline" color="light"></ion-icon>
+          <span>More Info</span>
         </ion-button>
       </ion-col>
-      <ion-col class="col_container_volume">
-        <ion-item class="volume_maturity_container">
-          <div class="button_volume_container">
-            <ion-icon src="../../assets/icons/volume.svg" class="button_volume"></ion-icon>
+      <!-- volume and maturity-->
+      <ion-col class="container_volume"size-xs="12" size-md="4">
+          <div class="actionButton">
+            <ion-icon
+              src="../../assets/icons/volume.svg"
+              class="button_volume"
+            ></ion-icon>
           </div>
-
-          <ion-label color="light" class="maturity-rating">
-            <span class="maturity-number">18+</span>
-          </ion-label>
-        </ion-item>
+          <div color="light" class="maturity-rating">
+            <span class="maturity-number">16+</span>
+          </div>
       </ion-col>
     </ion-row>
+  </ion-grid>
+  <!--fin header-->
+  <ion-grid>
     <!--Tv Shows-->
     <ion-row *ngIf="tvShows">
       <ion-col size="12">

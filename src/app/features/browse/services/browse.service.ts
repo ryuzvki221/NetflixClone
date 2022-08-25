@@ -58,6 +58,8 @@ export class BrowseService {
             if (!res.poster_path || !res.backdrop_path) return res;
             res.backdrop_path = environment.imgUrl + `${res.backdrop_path}`;
             res.poster_path = environment.imgUrl + `${res.poster_path}`;
+            res.name = `${res.title}`;
+            res.overview = `${res.overview}`;
             return res;
           });
         })
