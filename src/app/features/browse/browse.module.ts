@@ -5,9 +5,10 @@ import { BrowseRoutingModule } from './browse-routing.module';
 import { IonicModule } from '@ionic/angular';
 import { BrowseComponent } from 'src/app/browse/browse.component';
 import { BrowseService } from './services/browse.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  declarations: [BrowseComponent],
+  declarations: [BrowseComponent, ModalComponent],
   imports: [CommonModule, IonicModule, BrowseRoutingModule, HttpClientModule],
   providers: [BrowseService],
 })

@@ -1,4 +1,17 @@
-<ion-content>
+<!--navbar-->
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-padding ion-margin-start">
+      <ion-img src="../../assets/logo.svg" alt=""> </ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--content-->
+<ion-content
+  [fullscreen]="true"
+  [scrollEvents]="true"
+  (ionScroll)="listenScroll($event)"
+>
   <!--highlight-->
   <ion-grid
     *ngIf="background_bg"
@@ -23,21 +36,21 @@
           Play
         </ion-button>
         <ion-button color="rgba(109, 109, 110, 0.7)">
-          <ion-icon name="alert-circle-outline" color="light"></ion-icon>
+          <ion-icon name="information-circle-outline"></ion-icon>
           <span>More Info</span>
         </ion-button>
       </ion-col>
       <!-- volume and maturity-->
-      <ion-col class="container_volume"size-xs="12" size-md="4">
-          <div class="actionButton">
-            <ion-icon
-              src="../../assets/icons/volume.svg"
-              class="button_volume"
-            ></ion-icon>
-          </div>
-          <div color="light" class="maturity-rating">
-            <span class="maturity-number">16+</span>
-          </div>
+      <ion-col class="container_volume" size-xs="12" size-md="4">
+        <div class="actionButton">
+          <ion-icon
+            src="../../assets/icons/volume.svg"
+            class="button_volume"
+          ></ion-icon>
+        </div>
+        <div color="light" class="maturity-rating">
+          <span class="maturity-number">16+</span>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -52,7 +65,11 @@
       </ion-col>
       <ion-col size="12">
         <div class="flexBox">
-          <div class="flexItem" *ngFor="let show of tvShows">
+          <div
+            class="flexItem"
+            *ngFor="let show of tvShows"
+            (click)="displayDetails(show)"
+          >
             <ion-img [src]="show.poster_path"> </ion-img>
           </div>
         </div>
@@ -68,7 +85,11 @@
       </ion-col>
       <ion-col size="12" class="">
         <div class="flexBox">
-          <div class="flexItem" *ngFor="let trend of trendingNow">
+          <div
+            class="flexItem"
+            *ngFor="let trend of trendingNow"
+            (click)="displayDetails(trend)"
+          >
             <ion-img [src]="trend.poster_path"> </ion-img>
           </div>
         </div>
@@ -83,7 +104,11 @@
       </ion-col>
       <ion-col size="12" class="">
         <div class="flexBox">
-          <div class="flexItem" *ngFor="let release of releases">
+          <div
+            class="flexItem"
+            *ngFor="let release of releases"
+            (click)="displayDetails(release)"
+          >
             <ion-img [src]="release.poster_path"> </ion-img>
           </div>
         </div>
@@ -98,7 +123,11 @@
       </ion-col>
       <ion-col size="12" class="">
         <div class="flexBox">
-          <div class="flexItem" *ngFor="let an of anime">
+          <div
+            class="flexItem"
+            *ngFor="let an of anime"
+            (click)="displayDetails(an)"
+          >
             <ion-img [src]="an.poster_path"> </ion-img>
           </div>
         </div>
@@ -113,11 +142,28 @@
       </ion-col>
       <ion-col size="12" class="">
         <div class="flexBox">
-          <div class="flexItem" *ngFor="let movie of movies">
+          <div
+            class="flexItem"
+            *ngFor="let movie of movies"
+            (click)="displayDetails(movie)"
+          >
             <ion-img [src]="movie.poster_path"> </ion-img>
           </div>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <!--footer-->
+  <ion-footer class="ion-padding ion-margin">
+    <ion-text color="light">
+      <span
+        >© 2022 Made with ❤️ by<a
+          class="footer__copyright--link"
+          href="https://github.com/ryuzvki221"
+        >
+          Ryuzvki</a
+        ></span
+      >
+    </ion-text>
+  </ion-footer>
 </ion-content>

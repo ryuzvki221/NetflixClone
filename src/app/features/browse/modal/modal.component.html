@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="modalCtrl.dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="">
+      <ion-col size="12" size-md="12" size-lg="7">
+        <!--POSTER-->
+        <ion-img [src]="selected?.poster_path" alt="poster"></ion-img>
+      </ion-col>
+      <ion-col size-md="12" size-lg="5">
+        <ion-text color="light">
+          <h1>
+            {{
+              selected?.title ||
+                selected.original_name ||
+                selected.original_title
+            }}
+          </h1>
+          <p>
+            {{ selected?.release_date || selected.first_air_date | date }} |
+            Vote: {{ selected?.vote_average || selected.vote_average }}
+          </p>
+          <p>{{ selected?.overview }}</p>
+        </ion-text>
+        <ion-item>
+          <ion-button >
+            <ion-icon  name="play"></ion-icon>
+            Play
+          </ion-button>
+          <ion-button color="medium">
+            <ion-icon name="add"></ion-icon>
+            Add to List
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
